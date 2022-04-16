@@ -40,4 +40,3 @@ const LLink: FC<ILLinkProps> = ({
 }
 
 export default LLink
-

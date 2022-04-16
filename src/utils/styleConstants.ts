@@ -1,6 +1,5 @@
 const styleConstants = {
-    radius: {
-    }
+  radius: {}
 }
 
-export default styleConstants;
+export default styleConstants

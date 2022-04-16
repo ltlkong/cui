@@ -1,37 +1,37 @@
 export interface IColors {
-    colors: any
+  colors: any
 }
-interface IStyleProps extends IColors  {}
+interface IStyleProps extends IColors {}
 
-const createBaseBorderStyles = ({colors}:IStyleProps)=>({
+const createBaseBorderStyles = ({ colors }: IStyleProps) => ({
   base: {
-      borderRadius: '10%',
-      cursor:'pointer',
-      fontSize:'100%',
-      margin:'0',
-      padding:'.5em',
-      boxSizing:'border-box',
-      fontFamily:'inherit',
-      fontWeight:'inherit',
+    borderRadius: '10%',
+    cursor: 'pointer',
+    fontSize: '100%',
+    margin: '0',
+    padding: '.5em',
+    boxSizing: 'border-box',
+    fontFamily: 'inherit',
+    fontWeight: 'inherit'
   },
   colorGroup: {
-      backgroundColor: colors.main,
-      color: colors.secondary,
-      border: `1.5px solid ${colors.secondary}`,
+    backgroundColor: colors.main,
+    color: colors.secondary,
+    border: `1.5px solid ${colors.secondary}`
   },
   hover: {
     reverseColor: {
-      '&:hover':{
+      '&:hover': {
         backgroundColor: colors.secondary,
         color: colors.main,
-        borderColor: colors.main,
+        borderColor: colors.main
       }
     },
-  textUnderline: {
-    '&:hover': {
-        textDecoration: 'underline',
+    textUnderline: {
+      '&:hover': {
+        textDecoration: 'underline'
+      }
     }
-}
   }
 })
 

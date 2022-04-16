@@ -1,7 +1,7 @@
-type Arg = string|undefined
+type Arg = string | undefined
 
-const classNames = (...args: Arg[] ) => {
-    return args.join(' ');
+const classNames = (...args: Arg[]) => {
+  return args.join(' ')
 }
 
-export default classNames;
+export default classNames
