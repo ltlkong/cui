@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Link, colorUtils } from 'clean-ui'
+import { Button, SLink, colorUtils, PersonSleep } from 'clean-ui'
 import { BrowserRouter } from 'react-router-dom'
 
 const App = () => {
@@ -30,27 +30,74 @@ const App = () => {
       </section>
       <hr />
       <section>
-        <h4>Links</h4>
+        <h4>SLinks</h4>
 
         <div className={'split'}>
-          <Link to='/' type='primary'>
+          <SLink to='https://www.baidu.com' type='primary'>
             Primary
-          </Link>
-          <Link to='/' type='secondary'>
+          </SLink>
+
+          <SLink to='/' type='secondary'>
             Secondary
-          </Link>
+          </SLink>
+
+          <SLink
+            to='/'
+            type='cover'
+            colors={{
+              main: 'linear-gradient(90deg, rgba(0,212,255,1) 7%, rgba(77,77,145,1) 100%)',
+              secondary: colorUtils.dark,
+              mainGradient:
+                'linear-gradient(90deg, rgba(0,212,255,1) 7%, rgba(77,77,145,1) 100%)'
+            }}
+          >
+            Cover
+          </SLink>
+
+          <SLink to='/' type='article'>
+            Article
+          </SLink>
         </div>
 
         <article>
-          It's a link{' '}
-          <Link
-            to={'/'}
+          It's a link to
+          <SLink
+            to={'https://www.google.com'}
             type={'article'}
             colors={{ articleBg: colorUtils.springBlue }}
           >
-            Link
-          </Link>
+            Google
+          </SLink>
         </article>
+      </section>
+      <hr />
+
+      <section>
+        <h4>Fun</h4>
+        <div>
+          <div
+            style={{
+              width: '3em',
+              height: '3em',
+              border: '1px solid black',
+              display: 'inline-block',
+              margin: '0 1em'
+            }}
+          >
+            <PersonSleep pSize={'1em'} />
+          </div>
+          <div
+            style={{
+              width: '3em',
+              height: '3em',
+              border: '1px solid black',
+              display: 'inline-block',
+              margin: '0 1em'
+            }}
+          >
+            <PersonSleep pSize={'1em'} color={colorUtils.springPurple} />
+          </div>
+        </div>
       </section>
     </BrowserRouter>
   )

@@ -1,35 +1,38 @@
 import { createUseStyles } from 'react-jss'
-import createBaseBorderStyles, { IColors } from './baseBorderStyle'
+import createbaseStyles, { IColors } from './baseStyles'
+import { AvalialeLinkColors } from '../components/link/types'
 
-interface IProps extends IColors {
-  colors: {
-    main: string
-    secondary: string
-    articleBg: string
-  }
+export interface ILinkStylesProps extends IColors {
+  colors: AvalialeLinkColors
 }
 
-const useStyles = createUseStyles((props: IProps) => {
-  const baseBorderStyles = createBaseBorderStyles(props)
+const useStyles = createUseStyles((props: ILinkStylesProps) => {
+  const baseStyles = createbaseStyles(props)
 
   return {
     link: {
       textDecoration: 'none',
-      ...baseBorderStyles.base,
-      ...baseBorderStyles.colorGroup
+      ...baseStyles.base,
+      ...baseStyles.colorGroup
     },
     article: {
       border: 'none',
       backgroundColor: props.colors.articleBg,
       fontStyle: 'italic',
       lineHeight: 'inherit',
-      ...baseBorderStyles.hover.textUnderline
+      margin: '0 .5em',
+      ...baseStyles.hover.textUnderline
     },
     primary: {
-      ...baseBorderStyles.hover.reverseColor
+      ...baseStyles.hover.reverseColor
     },
     secondary: {
-      ...baseBorderStyles.hover.textUnderline
+      ...baseStyles.hover.textUnderline
+    },
+
+    cover: {
+      border: 'none',
+      ...baseStyles.hover.textCover
     }
   }
 })

@@ -1,18 +1,18 @@
 import { createUseStyles } from 'react-jss'
-import createBaseBorderStyles, { IColors } from './baseBorderStyle'
+import createBaseStyles, { IColors } from './baseStyles'
 
 const useStyles = createUseStyles((props: IColors) => {
-  const baseBorderStyles = createBaseBorderStyles(props)
+  const baseStyles = createBaseStyles(props)
   return {
     button: {
-      ...baseBorderStyles.base,
-      ...baseBorderStyles.colorGroup
+      ...baseStyles.base,
+      ...baseStyles.colorGroup
     },
     primary: {
-      ...baseBorderStyles.hover.reverseColor
+      ...baseStyles.hover.reverseColor
     },
     secondary: {
-      ...baseBorderStyles.hover.textUnderline
+      ...baseStyles.hover.textUnderline
     }
   }
 })
