@@ -1,32 +1,29 @@
 import * as React from 'react'
 import { FC, HTMLProps } from 'react'
-import { ButtonTypes } from './types'
+import { ButtonSkins, ButtonTypes } from './types'
 import useStyles from '../../styles/buttonStyle'
 import classNames from '../../utils/classNames'
-import colorsUtil from '../../utils/colors'
+import { camelCase } from '../../utils'
 
 export interface IButtonProps extends HTMLProps<HTMLButtonElement> {
   type?: ButtonTypes
-  colors?: {
-    main: string
-    secondary: string
-  }
+  skin?: ButtonSkins
 }
 
 const Button: FC<IButtonProps> = ({
   className,
   type = 'primary',
+  skin = 'none',
   children,
-  colors,
   ...rest
 }) => {
-  const newColors = {
-    main: colors?.main || colorsUtil.light,
-    secondary: colors?.secondary || colorsUtil.dark
-  }
-
-  const classes = useStyles({ theme: { colors: newColors } })
-  const buttonClassNames = classNames(className, classes[type], classes.button)
+  const classes = useStyles()
+  const buttonClassNames = classNames(
+    className,
+    classes[type],
+    classes[camelCase(type, skin)],
+    classes.button
+  )
 
   return (
     <button {...rest} className={buttonClassNames}>

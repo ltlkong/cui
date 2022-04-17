@@ -23,12 +23,12 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
     "prettier": "prettier --write '**/*.{ts,tsx,js,jsx,json,md,css,scss,html}'",
-    "clean": "rm -rf node_modules && rm -rf dist",
+    "clean": "rm -rf node_modules && rm -rf dist && rm -rf example/node_modules && rm -f example/yarn.lock",
     "clean:modules": "rm -rf node_modules"
   },
   "peerDependencies": {
     "react": "^17.0.2",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^5.3.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -69,7 +69,6 @@
   ],
   "dependencies": {
     "react-jss": "^10.9.0",
-    "react-router": "^6.3.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^5.3.1"
   }
 }

@@ -1,9 +1,16 @@
-export interface IColors {
-  colors: any
-}
-interface IStyleProps extends IColors {}
+import colorsUtil from '../utils/colors'
 
-const createBaseStyles = ({ colors }: IStyleProps) => ({
+export const getBaseColorGroup = (
+  bg: string,
+  text: string,
+  border: string
+) => ({
+  backgroundColor: bg,
+  color: text,
+  border: '1px solid' + border
+})
+
+const baseStyles = {
   base: {
     borderRadius: '5px',
     cursor: 'pointer',
@@ -15,43 +22,24 @@ const createBaseStyles = ({ colors }: IStyleProps) => ({
     fontWeight: 'inherit'
   },
 
-  colorGroup: {
-    backgroundColor: colors.main,
-    color: colors.secondary,
-    border: `1.5px solid ${colors.secondary}`
+  baseSkins: {
+    dark: {
+      ...getBaseColorGroup(colorsUtil.dark, colorsUtil.light, colorsUtil.light)
+    },
+    light: {
+      ...getBaseColorGroup(colorsUtil.light, colorsUtil.dark, colorsUtil.dark)
+    }
   },
+  textCover: {
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100% 0.3em',
+    backgroundPosition: '0 88%',
+    transition: 'background-size 0.12s ease-in',
 
-  hover: {
-    reverseColor: {
-      '&:hover': {
-        backgroundColor: colors.secondary,
-        color: colors.main,
-        borderColor: colors.main,
-        transition: 'all .2s ease-in-out'
-      }
-    },
-
-    textUnderline: {
-      '&:hover': {
-        textDecoration: 'underline'
-      }
-    },
-
-    textCover: {
-      backgroundImage: colors.mainGradient,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: '100% 0.3em',
-      backgroundPosition: '0 88%',
-      transition: 'background-size 0.12s ease-in',
-      padding: '.5em',
-      color: colors.secondary,
-
-      '&:hover': {
-        backgroundSize: '100% 100%',
-        color: colors.tertiary
-      }
+    hover: {
+      backgroundSize: '100% 100%'
     }
   }
-})
+}
 
-export default createBaseStyles
+export default baseStyles

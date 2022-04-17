@@ -2,39 +2,38 @@ import * as React from 'react'
 import { FC } from 'react'
 import { Link, LinkProps } from 'react-router-dom'
 import useStyles from '../../styles/linkStyle'
-import { AvalialeLinkColors } from './types'
+import { LinkSkins } from './types'
 import classNames from '../../utils/classNames'
-import colorsUtil from '../../utils/colors'
 import { LinkTypes } from './types'
+import { camelCase } from '../../utils'
 
-export interface ILinkProps extends LinkProps {
+export interface SLinkProps extends LinkProps {
   type?: LinkTypes
-  colors?: Partial<AvalialeLinkColors>
+  skin?: LinkSkins
+  to: string
 }
 
-const SLink: FC<ILinkProps> = ({
+const SLink: FC<SLinkProps> = ({
   className,
   to,
   children,
-  colors,
+  skin = 'none',
   type = 'primary',
   ...rest
 }) => {
-  const newColors = {
-    main: colors?.main || colorsUtil.light,
-    secondary: colors?.secondary || colorsUtil.dark,
-    tertiary: colors?.tertiary || colorsUtil.light,
-    articleBg: colors?.articleBg || colorsUtil.gray,
-    mainGradient:
-      colors?.mainGradient ||
-      'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,0,13,1) 100%, rgba(0,212,255,1) 100%);'
-  }
-  const classes = useStyles({ theme: { colors: newColors } })
-  const linkClassName = classNames(className, classes[type], classes.link)
+  const classes = useStyles()
+  const linkClassName = classNames(
+    classes[camelCase(type, skin)],
+    classes[type],
+    classes.link,
+    className
+  )
 
-  if (to.includes('.')) {
+  const isHref = to.startsWith('http')
+
+  if (isHref) {
     return (
-      <a href={to} className={linkClassName} target='_blank' {...rest}>
+      <a href={to} className={linkClassName} {...rest}>
         {children}
       </a>
     )

@@ -1,9 +1,5 @@
+import { Skins } from '../generalTypes'
+
 export type LinkTypes = 'primary' | 'secondary' | 'article' | 'cover'
 
-export interface AvalialeLinkColors {
-  main: string
-  secondary: string
-  tertiary: string
-  articleBg: string
-  mainGradient: string
-}
+export type LinkSkins = 'springGreen' | 'springBlue' | Skins
