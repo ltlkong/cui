@@ -4,15 +4,15 @@ import { ButtonSkins, ButtonTypes } from './types'
 import useStyles from '../../styles/buttonStyle'
 import classNames from '../../utils/classNames'
 import { camelCase } from '../../utils'
+import { WithTypeSkin } from '../generalTypes'
 
-export interface IButtonProps extends HTMLProps<HTMLButtonElement> {
-  type?: ButtonTypes
-  skin?: ButtonSkins
-}
+export interface ButtonProps
+  extends Omit<HTMLProps<HTMLButtonElement>, 'type'>,
+    WithTypeSkin<ButtonTypes, ButtonSkins> {}
 
-const Button: FC<IButtonProps> = ({
+const Button: FC<ButtonProps> = ({
   className,
-  type = 'primary',
+  sType = 'primary',
   skin = 'none',
   children,
   ...rest
@@ -20,8 +20,8 @@ const Button: FC<IButtonProps> = ({
   const classes = useStyles()
   const buttonClassNames = classNames(
     className,
-    classes[type],
-    classes[camelCase(type, skin)],
+    classes[sType],
+    classes[camelCase(sType, skin)],
     classes.button
   )
 

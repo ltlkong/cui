@@ -28,6 +28,7 @@ const useStyles = createUseStyles({
   link: {
     textDecoration: 'none',
     color: 'inherit',
+    display: 'inline-block',
     ...baseStyles.base
   },
 

@@ -8,6 +8,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -23,7 +27,7 @@ article {
 }
 
 section {
-  margin: 10px;
+  margin: 15px;
 }
 
 .bg-blue {
@@ -32,4 +36,27 @@ section {
 
 .bg-blue:hover {
   background-color: yellow;
+}
+
+.links-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  height: 10vh;
+  display: flex;
+  background-color: antiquewhite;
+  overflow-x: scroll;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.all-container {
+  margin-top: 11vh;
+}
+
+.all-container .anchor {
+  position: relative;
+  top: -11vh;
 }

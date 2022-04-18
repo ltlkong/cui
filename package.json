@@ -68,7 +68,8 @@
     "dist"
   ],
   "dependencies": {
-    "react-jss": "^10.9.0",
-    "react-router-dom": "^5.3.1"
+    "html-react-parser": "^1.4.11",
+    "js-guid": "^1.0.0",
+    "react-jss": "^10.9.0"
   }
 }

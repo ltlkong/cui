@@ -29,11 +29,13 @@ const useStyles = createUseStyles((props: IStylesProps) => {
       ...size(2.3, 3.2),
       position: 'relative',
       userSelect: 'none',
+      zIndex: 1,
 
       '& div': {
         position: 'absolute',
         backgroundColor: props.color,
-        borderColor: props.color
+        borderColor: props.color,
+        zIndex: 1
       },
 
       '& div:first-child': {
