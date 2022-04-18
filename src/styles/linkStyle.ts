@@ -1,7 +1,9 @@
-import { createUseStyles } from 'react-jss'
-import baseStyles, { getBaseColorGroup } from './baseStyles'
-import { LinkSkins } from '../components/link/types'
-import colorsUtil from '../utils/colors'
+import { createUseStyles } from 'react-jss';
+import baseStyles, {
+  getBaseColorGroup
+} from './baseStyles';
+import { LinkSkins } from '../components/link/types';
+import colorsUtil from '../utils/colors';
 
 export interface ILinkStylesProps {}
 
@@ -12,17 +14,17 @@ const getLinkSkins = (skin: LinkSkins) => {
         colorsUtil.springBlue,
         colorsUtil.light,
         colorsUtil.springYellow
-      )
+      );
     case 'springGreen':
       return getBaseColorGroup(
         colorsUtil.springGreen,
         colorsUtil.light,
         colorsUtil.springYellow
-      )
+      );
     default:
-      return null
+      return null;
   }
-}
+};
 
 const useStyles = createUseStyles({
   link: {
@@ -123,6 +125,6 @@ const useStyles = createUseStyles({
       ...baseStyles.textCover.hover
     }
   }
-})
+});
 
-export default useStyles
+export default useStyles;

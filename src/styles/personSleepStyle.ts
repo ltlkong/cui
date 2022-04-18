@@ -1,17 +1,17 @@
-import { createUseStyles } from 'react-jss'
+import { createUseStyles } from 'react-jss';
 
 interface IStylesProps {
-  color: string
+  color: string;
 }
 
 const position = (leftV: number, bottomV: number) => ({
   left: leftV - 0.4 + 'em',
   bottom: bottomV + 'em'
-})
+});
 const size = (widthV: number, heightV: number) => ({
   width: widthV + 'em',
   height: heightV + 'em'
-})
+});
 
 const useStyles = createUseStyles((props: IStylesProps) => {
   return {
@@ -104,7 +104,7 @@ const useStyles = createUseStyles((props: IStylesProps) => {
         transform: 'rotate(0deg)'
       }
     }
-  }
-})
+  };
+});
 
-export default useStyles
+export default useStyles;

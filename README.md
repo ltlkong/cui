@@ -13,14 +13,14 @@ npm install --save clean-ui
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import MyComponent from 'clean-ui'
-import 'clean-ui/dist/index.css'
+import MyComponent from 'clean-ui';
+import 'clean-ui/dist/index.css';
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <MyComponent />;
   }
 }
 ```

@@ -1,6 +1,6 @@
-import { createUseStyles } from 'react-jss'
-import baseStyles from './baseStyles'
-import colorsUtil from '../utils/colors'
+import { createUseStyles } from 'react-jss';
+import baseStyles from './baseStyles';
+import colorsUtil from '../utils/colors';
 
 const useStyles = createUseStyles({
   button: {
@@ -52,6 +52,6 @@ const useStyles = createUseStyles({
       ...baseStyles.textCover.hover
     }
   }
-})
+});
 
-export default useStyles
+export default useStyles;

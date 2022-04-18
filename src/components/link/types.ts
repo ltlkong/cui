@@ -1,5 +1,12 @@
-import { Skins } from '../generalTypes'
+import { Skins } from '../generalTypes';
 
-export type LinkTypes = 'primary' | 'secondary' | 'article' | 'cover'
+export type LinkTypes =
+  | 'primary'
+  | 'secondary'
+  | 'article'
+  | 'cover';
 
-export type LinkSkins = 'springGreen' | 'springBlue' | Skins
+export type LinkSkins =
+  | 'springGreen'
+  | 'springBlue'
+  | Skins;

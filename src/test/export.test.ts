@@ -1,19 +1,19 @@
-import { SLink, PersonSleep, Button } from '../components'
+import { SLink, PersonSleep, Button } from '../components';
 
 describe('SLinkComponent', () => {
   it('is truthy', () => {
-    expect(SLink).toBeTruthy()
-  })
-})
+    expect(SLink).toBeTruthy();
+  });
+});
 
 describe('PersonSleepComponent', () => {
   it('is truthy', () => {
-    expect(PersonSleep).toBeTruthy()
-  })
-})
+    expect(PersonSleep).toBeTruthy();
+  });
+});
 
 describe('ButtonComponent', () => {
   it('is truthy', () => {
-    expect(Button).toBeTruthy()
-  })
-})
+    expect(Button).toBeTruthy();
+  });
+});

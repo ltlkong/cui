@@ -1,12 +1,13 @@
-import * as React from 'react'
-import { ReactElement, HTMLProps } from 'react'
-import useStyles from '../../styles/personSleepStyle'
-import { classNames, colorUtils } from '../../utils'
+import * as React from 'react';
+import { ReactElement, HTMLProps } from 'react';
+import useStyles from '../../styles/personSleepStyle';
+import { classNames, colorUtils } from '../../utils';
 
-interface IPersonSleepProps extends HTMLProps<HTMLDivElement> {
-  pSize: string
-  zText?: string
-  color?: string
+interface IPersonSleepProps
+  extends HTMLProps<HTMLDivElement> {
+  pSize: string;
+  zText?: string;
+  color?: string;
 }
 
 function PersonSleepFun({
@@ -17,15 +18,14 @@ function PersonSleepFun({
   zText = 'Z',
   ...rest
 }: IPersonSleepProps): ReactElement {
-  const newColor = color || colorUtils.dark
-  const classes = useStyles({ theme: { color: newColor } })
+  const newColor = color || colorUtils.dark;
+  const classes = useStyles({ theme: { color: newColor } });
 
   return (
     <div
       className={classNames(className, classes.personSleep)}
       {...rest}
-      style={{ fontSize: pSize, ...style }}
-    >
+      style={{ fontSize: pSize, ...style }}>
       <div>
         <span>{zText}</span>
       </div>
@@ -33,7 +33,7 @@ function PersonSleepFun({
         <div key={key}></div>
       ))}
     </div>
-  )
+  );
 }
 
-export default PersonSleepFun
+export default PersonSleepFun;

@@ -1,4 +1,4 @@
-import colorsUtil from '../utils/colors'
+import colorsUtil from '../utils/colors';
 
 export const getBaseColorGroup = (
   bg: string,
@@ -8,7 +8,7 @@ export const getBaseColorGroup = (
   backgroundColor: bg,
   color: text,
   border: '1px solid' + border
-})
+});
 
 const baseStyles = {
   base: {
@@ -24,10 +24,18 @@ const baseStyles = {
 
   baseSkins: {
     dark: {
-      ...getBaseColorGroup(colorsUtil.dark, colorsUtil.light, colorsUtil.light)
+      ...getBaseColorGroup(
+        colorsUtil.dark,
+        colorsUtil.light,
+        colorsUtil.light
+      )
     },
     light: {
-      ...getBaseColorGroup(colorsUtil.light, colorsUtil.dark, colorsUtil.dark)
+      ...getBaseColorGroup(
+        colorsUtil.light,
+        colorsUtil.dark,
+        colorsUtil.dark
+      )
     }
   },
   textCover: {
@@ -40,6 +48,6 @@ const baseStyles = {
       backgroundSize: '100% 100%'
     }
   }
-}
+};
 
-export default baseStyles
+export default baseStyles;

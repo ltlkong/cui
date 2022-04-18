@@ -1,5 +1,5 @@
-import { Skins } from '../generalTypes'
+import { Skins } from '../generalTypes';
 
-export type ButtonTypes = 'primary' | 'secondary'
+export type ButtonTypes = 'primary' | 'secondary';
 
-export type ButtonSkins = Skins
+export type ButtonSkins = Skins;
