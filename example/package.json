@@ -21,7 +21,7 @@
     "clean-ui": "link:..",
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
-    "react-router-dom": "^link:../node_modules/react-router-dom",
+    "react-router-dom": "^5.3.1",
     "react-scripts": "link:../node_modules/react-scripts",
     "typescript": "link:../node_modules/typescript"
   },
